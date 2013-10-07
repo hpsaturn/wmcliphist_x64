@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Wmcliphist x64 : Fork of wmcliphist (32bits). Some bugs are fixed in this version." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Wmcliphist x64</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hpsaturn/wmcliphist_x64">View on GitHub</a>
+
+          <h1 id="project_title">Wmcliphist x64</h1>
+          <h2 id="project_tagline">Fork of wmcliphist (32bits). Some bugs are fixed in this version.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hpsaturn/wmcliphist_x64/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hpsaturn/wmcliphist_x64/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="wmcliphist_x64" class="anchor" href="#wmcliphist_x64"><span class="octicon octicon-link"></span></a>wmcliphist_x64</h1>
+
+<p>Fork of wmcliphist (32bits). Some bugs are fixed in this version.</p>
+
+<h2>
+<a name="copying" class="anchor" href="#copying"><span class="octicon octicon-link"></span></a>Copying</h2>
+
+<p>This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.</p>
+
+<h2>
+<a name="what-is-it" class="anchor" href="#what-is-it"><span class="octicon octicon-link"></span></a>What is it?</h2>
+
+<p>In short, it is clipboard history dockable application for Window Maker
+(and maybe AfterStep with some little modifications - not tested).
+wmcliphist keeps history of clipboard operations and allows you to put
+previously copied items back to clipboard for pasting to other
+applications. I wrote wmcliphist because there was no such application
+suitable for usage in Window Maker and I was confused to run number of
+KDE daemons for Klipper (which was the inspiration).</p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>selectable number of items to keep</li>
+<li>detachable (tear off) menu with clipboard history</li>
+<li>possibility to lock item (locked items will not be overriden by new
+clipboard operations). To lock item press right mouse button on it.</li>
+<li>saves history to file on exit (and loads it on start, of course :),
+periodicaly and/or on request</li>
+<li>can handle binary data</li>
+<li>configurable hotkey support (pop up menu at mouse cursor position)</li>
+<li>regular expression driven actions (ignore/submenu/exec)</li>
+<li>possibility to lock clipboard (new selections will not replace the
+current one and it could not be stored in history too)</li>
+</ul><h2>
+<a name="instalation" class="anchor" href="#instalation"><span class="octicon octicon-link"></span></a>Instalation</h2>
+
+<p>wmcliphist requires gtk+ and glib (fully tested only with 1.2.8 and
+1.2.10, but probably will work with any 1.2.x version) and foodock
+library for writing dockable applications based on gtk+ (included).
+Hopefuly you'll only need to run</p>
+
+<p>make all install</p>
+
+<p>to compile and install wmcliphist. Note that you have to be root to
+install program to /usr/local/bin (default). If it fails, check, that
+you have installed gtk+, gtk+-devel, glib and glib-devel packages, make
+and compiler (gcc). If it still fails, try to upgrade to up to date
+versions of libraries listed above (see <a href="http://www.gtk.org">www.gtk.org</a>).
+wmcliphist was tested only on Linux (Red Hat Linux 7.2, kernel 2.4.9,
+gcc 2.96), but it should compile and run on other un*x systems too.
+After installing binary you can create your configuration file in
+~/.wmcliphistrc (sample config file wmcliphistrc is included in
+distribution archive).</p>
+
+<p>Upgrading</p>
+
+<p>Please note, that upgrade from version 0.1 will delete your old history!
+If you are upgrading from version 0.2 to 0.3, move your ~/.wmcliphistrc
+to ~/.wmcliphist.data and create new ~/.wmcliphistrc with configuration
+(sample config file is included).</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>wmcliphist accepts followinf options:</p>
+
+<p>-h         show help
+-n    set number of items to keep (default 10)
+-c color   set color for locked items (default is red)
+-s   choose wmcliphist icon size:
+           16 = tiny 16x16 px icon
+           30 = icon suitable for 32px dock/slit
+           40 = icon suitable for 48px dock/slit
+           60 = icon suitable for 64px dock/slit (default)
+-i    choose wmcliphist icon antialiasing:
+           0 = for mid tones background (default)
+           1 = for dark background
+           2 = for light background</p>
+
+<p>Example:</p>
+
+<p>/usr/local/bin/wmcliphist -n 15 -c darkgreen</p>
+
+<p>Some of theese options and many others can be set in ~/.wmcliphistrc too.</p>
+
+<p>Left click on icon opens menu with history and right click opens
+application menu. Right click on history menu item will lock it.
+History menu can be opened at mouse cursor position with configurable
+hotkey too.</p>
+
+<h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>ToDo</h2>
+
+<ul>
+<li>Maybe some configuration GUI? Who knows...</li>
+<li>Separated history queues</li>
+</ul><h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Michal Krause 
+Daniel Richard G.  (icon set used from version 0.5)
+Michael Beattie (new exec action handling in 0.6)
+Vadim O. Ustiansky (some improvements in 0.7)</p>
+
+<h2>
+<a name="special-thanx" class="anchor" href="#special-thanx"><span class="octicon octicon-link"></span></a>Special thanx</h2>
+
+<p>Alexey Vyskubov, <a href="mailto:alexey@pepper.spb.ru">alexey@pepper.spb.ru</a>
+foodock library</p>
+
+<p><a href="mailto:mdem@chat.ru">mdem@chat.ru</a>
+Downloader for X, from which I took inspiration for clipboard
+monitoring. BTW, it's great peace of software, try it.</p>
+
+<h2>
+<a name="download" class="anchor" href="#download"><span class="octicon octicon-link"></span></a>Download</h2>
+
+<p><a href="http://linux.nawebu.cz/wmcliphist/">http://linux.nawebu.cz/wmcliphist/</a></p>
+
+<h2>
+<a name="apology" class="anchor" href="#apology"><span class="octicon octicon-link"></span></a>Apology</h2>
+
+<p>I'd like to apologize to all English speaking people for mangling of
+their mother tongue :)</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Wmcliphist x64 maintained by <a href="https://github.com/hpsaturn">hpsaturn</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
